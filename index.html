@@ -1,215 +1,429 @@
 <!doctype html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
 
     <title>Olhar Artístico e Olhar Banal na Arte</title>
 
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
+
+
     <style>
+
         /* FUNDO ARTÍSTICO COM GRADIENTE ANIMADO */
+
         #particles-js {
+
             position: fixed;
+
             width: 100%;
+
             height: 100%;
+
             background: linear-gradient(125deg, #000000, #0a0a14, #1a0b2e, #000000);
+
             background-size: 400% 400%;
+
             animation: gradientAnim 15s ease infinite;
+
             z-index: 1;
+
         }
+
+
 
         @keyframes gradientAnim {
+
             0% { background-position: 0% 50%; }
+
             50% { background-position: 100% 50%; }
+
             100% { background-position: 0% 50%; }
+
         }
+
+
 
         .reveal {
+
             z-index: 2;
+
             background: transparent !important;
+
         }
+
+
 
         .slide-container {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             gap: 20px;
+
         }
+
+
 
         .slide-text {
+
             width: 55%;
+
             text-align: left;
+
         }
+
+
 
         .slide-image-side {
+
             width: 40%;
+
         }
+
+
 
         img {
+
             max-width: 100%;
+
             border-radius: 12px;
+
             box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+
             border: 1px solid rgba(255, 255, 255, 0.15);
+
             transition: transform 0.5s ease;
+
         }
+
         
+
         img:hover {
+
             transform: scale(1.05);
+
         }
+
+
 
         h1, h2, h3 {
+
             text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+
             letter-spacing: 2px;
+
         }
 
+
+
         blockquote {
+
             background: rgba(255, 255, 255, 0.03) !important;
+
             border-left: 4px solid #d8b4fe !important;
+
             box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+
         }
+
     </style>
+
 </head>
+
 <body>
+
+
 
     <div id="particles-js"></div>
 
+
+
     <div class="reveal">
+
         <div class="slides">
 
+
+
             <section data-transition="fade">
+
                 <h1 style="font-weight: 800; color: #fff;">Olhar Artístico</h1>
+
                 <h3 style="color: #d8b4fe;">e Olhar Banal na Arte</h3>
+
                 <p style="font-size: 0.6em; margin-top: 50px; opacity: 0.8;">
+
                     Dirigido por: Ricardo, Hiago, Hugo, Ilka, Isadora
+
                 </p>
+
                 <p style="font-size: 0.4em; opacity: 0.5;">Versão 2026</p>
+
             </section>
+
+
 
             <section data-transition="convex">
+
                 <h2>O Olhar Banal</h2>
+
                 <div class="slide-container">
+
                     <div class="slide-text">
+
                         <p style="font-size: 0.8em;">Forma padrão de processar o mundo, guiada pela funcionalidade e rapidez.</p>
+
                         <ul style="font-size: 0.65em;">
+
                             <li><strong>Funcionalidade:</strong> Objeto = Utilidade.</li>
+
                             <li><strong>Sem Observação:</strong> Identificação superficial.</li>
+
                             <li><strong>Automatismo:</strong> Ignora o mistério da rotina.</li>
+
                         </ul>
+
                     </div>
+
                     <div class="slide-image-side">
+
                         <img src="imgs/download (5).jpg" alt="Olhar Banal">
+
                     </div>
+
                 </div>
+
             </section>
 
+
+
             <section data-transition="zoom">
+
                 <h3>A Banalidade na Arte</h3>
+
                 <div class="slide-container">
+
                     <div class="slide-text">
+
                         <p style="font-size: 0.75em;">A arte deve ser honesta e integrada à vida.</p>
+
                         <p style="font-size: 0.7em;">Não deve ser um privilégio, mas algo essencial e cotidiano.</p>
+
                         <p style="font-size: 0.7em;">A <strong>Pop Art</strong> foca no comum para mostrar que a beleza está na forma como olhamos.</p>
+
                     </div>
+
                     <div class="slide-image-side">
+
                         <img src="imgs/banalidade.jpg" alt="Arte e Banalidade">
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <section data-transition="slide" data-background-color="rgba(17, 0, 36, 0.4)">
+
                 <h3>A "Fadiga" do Olhar Banal</h3>
+
                 <div class="slide-container">
+
                     <div class="slide-image-side">
+
                         <img src="imgs/download (6).jpg" alt="Fadiga do Olhar">
+
                     </div>
+
                     <div class="slide-text">
+
                         <p style="font-size: 0.7em;">Estratégia de sobrevivência para poupar energia.</p>
+
                         <blockquote style="font-size: 0.55em;">
+
                             "Se ficássemos fascinados por cada grão de poeira... não conseguiríamos atravessar a rua".
+
                         </blockquote>
+
                         <p style="font-size: 0.7em;">O artista decide "gastar" energia para resgatar a intensidade das coisas.</p>
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <section data-transition="concave">
+
                 <h2>O Olhar Artístico</h2>
+
                 <div class="slide-container">
+
                     <div class="slide-text">
+
                         <p style="font-size: 0.8em;">Escolha consciente de observar em vez de apenas ver.</p>
+
                         <ul style="font-size: 0.65em;">
+
                             <li><strong>Espanto no Cotidiano:</strong> Ver o comum como novo.</li>
+
                             <li><strong>Atribuição de Significado:</strong> Extrair o extraordinário.</li>
+
                             <li><strong>Posição de Estrangeiro:</strong> Surpreender-se pelo óbvio.</li>
+
                         </ul>
+
                     </div>
+
                     <div class="slide-image-side">
+
                         <img src="imgs/download (1).jpg" alt="Olhar Artístico">
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <section data-transition="zoom">
+
                 <h2>A Visão Háptica</h2>
+
                 <div class="slide-container">
+
                     <div class="slide-text">
+
                         <p style="color: #d8b4fe; font-weight: bold;">"O olhar artístico não mede distâncias, ele tateia texturas".</p>
+
                         <p style="font-size: 0.75em;">Os olhos agem como dedos, percebendo rugosidades e densidades.</p>
+
                         <p style="font-size: 0.75em;">Passagem da visão geométrica para a visão orgânica.</p>
+
                     </div>
+
                     <div class="slide-image-side">
+
                         <img src="imgs/download.jpg" alt="Visão Háptica">
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <section data-transition="fade">
-                <h2>Habitar a Imagem</h2>
+
+                <h2>Resumindo:</h2>
+
                 <p style="font-size: 0.8em;">Banal: Consome a imagem (vê para usar).</p>
-                <p style="font-size: 0.8em;">Artístico: Resumindo: (vê para ser e sentir).</p>
+
+                <p style="font-size: 0.8em;">Artístico: Habita a imagem (vê para ser e sentir).</p>
+
                 <hr style="border-color: rgba(216, 180, 254, 0.3);">
+
                 <p style="font-size: 0.6em; color: #d8b4fe; font-style: italic; opacity: 0.8;">
+
                     "Após o terceiro minuto olhando, o nome do objeto 'some' e restam apenas formas e mistérios".
+
                 </p>
+
             </section>
 
+
+
         </div>
+
     </div>
 
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     
+
     <script>
+
         Reveal.initialize({
+
             controls: true,
+
             progress: true,
+
             center: true,
+
             hash: true,
+
             transitionSpeed: 'slow'
+
         });
 
+
+
         /* CONFIGURAÇÃO DE PARTÍCULAS "FLUXO DE ENERGIA" */
+
         particlesJS("particles-js", {
+
           "particles": {
+
             "number": { "value": 130, "density": { "enable": true, "value_area": 800 } },
+
             "color": { "value": ["#d8b4fe", "#818cf8", "#ffffff", "#c084fc"] },
+
             "shape": { "type": "circle" },
+
             "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+
             "size": { "value": 2.5, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3, "sync": false } },
+
             "line_linked": { "enable": true, "distance": 130, "color": "#d8b4fe", "opacity": 0.15, "width": 1 },
+
             "move": { "enable": true, "speed": 1.2, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 } }
+
           },
+
           "interactivity": {
+
             "detect_on": "canvas",
+
             "events": { "onhover": { "enable": true, "mode": "bubble" }, "onclick": { "enable": true, "mode": "repulse" }, "resize": true },
+
             "modes": { "bubble": { "distance": 200, "size": 6, "duration": 2, "opacity": 1, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 } }
+
           },
+
           "retina_detect": true
+
         });
+
     </script>
+
 </body>
+
 </html>
