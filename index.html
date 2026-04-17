@@ -1,1 +1,229 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Olhar Artístico e Olhar Banal na Arte</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(125deg, #000, #0a0a14, #1a0b2e, #000);
+            background-size: 400% 400%;
+            animation: gradientAnim 15s ease infinite;
+            z-index: 1;
+        }
+
+        @keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .reveal { z-index: 2; background: transparent !important; }
+
+        /* --- UI DO TERMINAL --- */
+        #terminal-launcher {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #terminal-launcher:hover { transform: scale(1.1); }
+
+        #terminal-launcher img {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+        }
+
+        #terminal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #terminal-window {
+            width: 90%;
+            height: 85%;
+            background: #000;
+            border: 2px solid #333;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
+            overflow: hidden;
+        }
+
+        /* Barra de Título com Botão X */
+        #term-header {
+            background: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        #close-terminal {
+            width: 20px;
+            height: 20px;
+            background: #ff5f56; /* Vermelho Apple/Linux */
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #close-terminal:hover { background: #ff3b30; }
+
+        #term-body {
+            flex: 1;
+            padding: 30px;
+            color: #00ff41; /* Verde clássico terminal */
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            overflow-y: auto;
+        }
+
+        #terminal-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 80%;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        /* Ajustes de Imagem */
+        .slide-container { display: flex; align-items: center; gap: 20px; }
+        img { max-width: 100%; border-radius: 12px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div id="terminal-launcher">
+        <img src="caminho_para_sua_imagem_terminal.png" alt="Abrir Terminal">
+    </div>
+
+    <div id="terminal-overlay">
+        <div id="terminal-window">
+            <div id="term-header">
+                <span style="color: #666; font-size: 12px;">system_art@terminal: ~</span>
+                <button id="close-terminal" title="Fechar e voltar aos slides"></button>
+            </div>
+            <div id="term-body">
+                <div id="terminal-output">
+                    Iniciando System.Art v2.026...<br>
+                    Dispositivo reconhecido via Neofetch.<br>
+                    Digite 'stats' ou 'fim'.<br><br>
+                </div>
+                <span>$ </span><input type="text" id="terminal-input" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>Olhar Artístico</h1><h3>e Olhar Banal</h3></section>
+            
+            <section>
+                <h2>O Olhar Banal</h2>
+                <div class="slide-container">
+                    <div style="width: 50%; text-align: left;">
+                        <p>A forma automática de ver o mundo.</p>
+                    </div>
+                    <div style="width: 50%;">
+                        <img src="imgs/download (5).jpg">
+                    </div>
+                </div>
+            </section>
+
+            <section id="final-slide">
+                <h2 style="color: #d8b4fe;">FIM DA APRESENTAÇÃO</h2>
+                <div style="margin-top: 30px;">
+                    <img src="imgs/SUA_IMAGEM_AQUI.jpg" style="max-height: 400px;">
+                </div>
+                <p style="font-size: 0.6em; margin-top: 20px; opacity: 0.7;">Obrigado pela atenção.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        const deck = new Reveal();
+        deck.initialize({ controls: true, progress: true, center: true, hash: true });
+
+        // Elementos do Terminal
+        const launcher = document.getElementById('terminal-launcher');
+        const overlay = document.getElementById('terminal-overlay');
+        const closeBtn = document.getElementById('close-terminal');
+        const input = document.getElementById('terminal-input');
+        const output = document.getElementById('terminal-output');
+
+        // Abrir/Fechar
+        launcher.onclick = () => { overlay.style.display = 'flex'; input.focus(); };
+        closeBtn.onclick = () => { overlay.style.display = 'none'; };
+
+        // Comandos
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = input.value.toLowerCase().trim();
+                const now = new Date();
+                
+                if (cmd === 'stats') {
+                    output.innerHTML += `<div style="color: #888;">> Gerando neofetch...</div>
+                        <span style="color: #d8b4fe;">User:</span> Professor<br>
+                        <span style="color: #d8b4fe;">Date:</span> ${now.toLocaleDateString()} ${now.toLocaleTimeString()}<br>
+                        <span style="color: #d8b4fe;">Device:</span> Browser Session (Reveal.js)<br>
+                        <span style="color: #d8b4fe;">Resolution:</span> ${screen.width}x${screen.height}<br>-----------------------<br>`;
+                } 
+                else if (cmd === 'fim') {
+                    output.innerHTML += `<div>Saindo...</div>`;
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        // Pula para o último slide na mesma aba
+                        deck.slide( deck.getHorizontalSlides().length - 1 );
+                    }, 600);
+                }
+                
+                input.value = '';
+                document.getElementById('term-body').scrollTop = document.getElementById('term-body').scrollHeight;
+            }
+        });
+
+        /* Particles Config */
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100 },
+                "color": { "value": "#ffffff" },
+                "size": { "value": 2 },
+                "line_linked": { "enable": true, "opacity": 0.1 },
+                "move": { "enable": true, "speed": 1 }
+            }
+        });
+    </script>
+</body>
+</html>
