@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Olhar Artístico e Olhar Banal na Arte</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
@@ -10,11 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
     <style>
+        /* FUNDO ARTÍSTICO COM GRADIENTE ANIMADO */
         #particles-js {
             position: fixed;
             width: 100%;
             height: 100%;
-            background: linear-gradient(125deg, #000, #0a0a14, #1a0b2e, #000);
+            background: linear-gradient(125deg, #000000, #0a0a14, #1a0b2e, #000000);
             background-size: 400% 400%;
             animation: gradientAnim 15s ease infinite;
             z-index: 1;
@@ -26,146 +28,150 @@
             100% { background-position: 0% 50%; }
         }
 
-        .reveal { z-index: 2; background: transparent !important; }
-
-        /* --- UI DO TERMINAL --- */
-        #terminal-launcher {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            z-index: 1000;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+        .reveal {
+            z-index: 2;
+            background: transparent !important;
         }
 
-        #terminal-launcher:hover { transform: scale(1.1); }
-
-        #terminal-launcher img {
-            width: 50px;
-            height: 50px;
-            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
-        }
-
-        #terminal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
+        .slide-container {
+            display: flex;
             align-items: center;
-            justify-content: center;
-        }
-
-        #terminal-window {
-            width: 90%;
-            height: 85%;
-            background: #000;
-            border: 2px solid #333;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 50px rgba(0,0,0,1);
-            overflow: hidden;
-        }
-
-        /* Barra de Título com Botão X */
-        #term-header {
-            background: #1a1a1a;
-            padding: 10px 20px;
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
+            gap: 20px;
         }
 
-        #close-terminal {
-            width: 20px;
-            height: 20px;
-            background: #ff5f56; /* Vermelho Apple/Linux */
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
+        .slide-text {
+            width: 55%;
+            text-align: left;
         }
 
-        #close-terminal:hover { background: #ff3b30; }
-
-        #term-body {
-            flex: 1;
-            padding: 30px;
-            color: #00ff41; /* Verde clássico terminal */
-            font-family: 'Courier New', monospace;
-            font-size: 1.2em;
-            overflow-y: auto;
+        .slide-image-side {
+            width: 40%;
         }
 
-        #terminal-input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            outline: none;
-            width: 80%;
-            font-family: inherit;
-            font-size: 1em;
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.5s ease;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
         }
 
-        /* Ajustes de Imagem */
-        .slide-container { display: flex; align-items: center; gap: 20px; }
-        img { max-width: 100%; border-radius: 12px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); }
+        h1, h2, h3 {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+            letter-spacing: 2px;
+        }
+
+        blockquote {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border-left: 4px solid #d8b4fe !important;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <div id="terminal-launcher">
-        <img src="caminho_para_sua_imagem_terminal.png" alt="Abrir Terminal">
-    </div>
-
-    <div id="terminal-overlay">
-        <div id="terminal-window">
-            <div id="term-header">
-                <span style="color: #666; font-size: 12px;">system_art@terminal: ~</span>
-                <button id="close-terminal" title="Fechar e voltar aos slides"></button>
-            </div>
-            <div id="term-body">
-                <div id="terminal-output">
-                    Iniciando System.Art v2.026...<br>
-                    Dispositivo reconhecido via Neofetch.<br>
-                    Digite 'stats' ou 'fim'.<br><br>
-                </div>
-                <span>$ </span><input type="text" id="terminal-input" autofocus>
-            </div>
-        </div>
-    </div>
-
     <div class="reveal">
         <div class="slides">
-            <section><h1>Olhar Artístico</h1><h3>e Olhar Banal</h3></section>
-            
-            <section>
+
+            <section data-transition="fade">
+                <h1 style="font-weight: 800; color: #fff;">Olhar Artístico</h1>
+                <h3 style="color: #d8b4fe;">vs Olhar Banal na Arte</h3>
+                <p style="font-size: 0.6em; margin-top: 50px; opacity: 0.8;">
+                    Dirigido por: Ricardo, Hiago, Hugo, Ilka, Isadora
+                </p>
+                <p style="font-size: 0.4em; opacity: 0.5;">Versão 2026</p>
+            </section>
+
+            <section data-transition="convex">
                 <h2>O Olhar Banal</h2>
                 <div class="slide-container">
-                    <div style="width: 50%; text-align: left;">
-                        <p>A forma automática de ver o mundo.</p>
+                    <div class="slide-text">
+                        <p style="font-size: 0.8em;">Forma padrão de processar o mundo, guiada pela funcionalidade e rapidez.</p>
+                        <ul style="font-size: 0.65em;">
+                            <li><strong>Funcionalidade:</strong> Objeto = Utilidade.</li>
+                            <li><strong>Sem Observação:</strong> Identificação superficial.</li>
+                            <li><strong>Automatismo:</strong> Ignora o mistério da rotina.</li>
+                        </ul>
                     </div>
-                    <div style="width: 50%;">
-                        <img src="imgs/download (5).jpg">
+                    <div class="slide-image-side">
+                        <img src="imgs/download (5).jpg" alt="Olhar Banal">
                     </div>
                 </div>
             </section>
 
-            <section id="final-slide">
-                <h2 style="color: #d8b4fe;">FIM DA APRESENTAÇÃO</h2>
-                <div style="margin-top: 30px;">
-                    <img src="imgs/SUA_IMAGEM_AQUI.jpg" style="max-height: 400px;">
+            <section data-transition="zoom">
+                <h3>A Banalidade na Arte</h3>
+                <div class="slide-container">
+                    <div class="slide-text">
+                        <p style="font-size: 0.75em;">A arte deve ser honesta e integrada à vida.</p>
+                        <p style="font-size: 0.7em;">Não deve ser um privilégio, mas algo essencial e cotidiano.</p>
+                        <p style="font-size: 0.7em;">A <strong>Pop Art</strong> foca no comum para mostrar que a beleza está na forma como olhamos.</p>
+                    </div>
+                    <div class="slide-image-side">
+                        <img src="imgs/banalidade.jpg" alt="Arte e Banalidade">
+                    </div>
                 </div>
-                <p style="font-size: 0.6em; margin-top: 20px; opacity: 0.7;">Obrigado pela atenção.</p>
             </section>
+
+            <section data-transition="slide" data-background-color="rgba(17, 0, 36, 0.4)">
+                <h3>A "Fadiga" do Olhar Banal</h3>
+                <div class="slide-container">
+                    <div class="slide-image-side">
+                        <img src="imgs/download (6).jpg" alt="Fadiga do Olhar">
+                    </div>
+                    <div class="slide-text">
+                        <p style="font-size: 0.7em;">Estratégia de sobrevivência para poupar energia.</p>
+                        <blockquote style="font-size: 0.55em;">
+                            "Se ficássemos fascinados por cada grão de poeira... não conseguiríamos atravessar a rua".
+                        </blockquote>
+                        <p style="font-size: 0.7em;">O artista decide "gastar" energia para resgatar a intensidade das coisas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-transition="concave">
+                <h2>O Olhar Artístico</h2>
+                <div style="text-align: left;">
+                    <p style="font-size: 0.8em;">Escolha consciente de observar em vez de apenas ver.</p>
+                    <ul style="font-size: 0.7em;">
+                        <li><strong>Espanto no Cotidiano:</strong> Ver o comum como novo.</li>
+                        <li><strong>Atribuição de Significado:</strong> Extrair o extraordinário.</li>
+                        <li><strong>Posição de Estrangeiro:</strong> Surpreender-se pelo óbvio.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-transition="zoom">
+                <h2>A Visão Háptica</h2>
+                <div class="slide-container">
+                    <div class="slide-text">
+                        <p style="color: #d8b4fe; font-weight: bold;">"O olhar artístico não mede distâncias, ele tateia texturas".</p>
+                        <p style="font-size: 0.75em;">Os olhos agem como dedos, percebendo rugosidades e densidades.</p>
+                        <p style="font-size: 0.75em;">Passagem da visão geométrica para a visão orgânica.</p>
+                    </div>
+                    <div class="slide-image-side">
+                        <img src="imgs/download.jpg" alt="Visão Háptica">
+                    </div>
+                </div>
+            </section>
+
+            <section data-transition="fade">
+                <h2>Habitar a Imagem</h2>
+                <p style="font-size: 0.8em;">Banal: Consome a imagem (vê para usar).</p>
+                <p style="font-size: 0.8em;">Artístico: Habita a imagem (vê para ser e sentir).</p>
+                <hr style="border-color: rgba(216, 180, 254, 0.3);">
+                <p style="font-size: 0.6em; color: #d8b4fe; font-style: italic; opacity: 0.8;">
+                    "Após o terceiro minuto olhando, o nome do objeto 'some' e restam apenas formas e mistérios".
+                </p>
+            </section>
+
         </div>
     </div>
 
@@ -173,56 +179,31 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
-        const deck = new Reveal();
-        deck.initialize({ controls: true, progress: true, center: true, hash: true });
-
-        // Elementos do Terminal
-        const launcher = document.getElementById('terminal-launcher');
-        const overlay = document.getElementById('terminal-overlay');
-        const closeBtn = document.getElementById('close-terminal');
-        const input = document.getElementById('terminal-input');
-        const output = document.getElementById('terminal-output');
-
-        // Abrir/Fechar
-        launcher.onclick = () => { overlay.style.display = 'flex'; input.focus(); };
-        closeBtn.onclick = () => { overlay.style.display = 'none'; };
-
-        // Comandos
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const cmd = input.value.toLowerCase().trim();
-                const now = new Date();
-                
-                if (cmd === 'stats') {
-                    output.innerHTML += `<div style="color: #888;">> Gerando neofetch...</div>
-                        <span style="color: #d8b4fe;">User:</span> Professor<br>
-                        <span style="color: #d8b4fe;">Date:</span> ${now.toLocaleDateString()} ${now.toLocaleTimeString()}<br>
-                        <span style="color: #d8b4fe;">Device:</span> Browser Session (Reveal.js)<br>
-                        <span style="color: #d8b4fe;">Resolution:</span> ${screen.width}x${screen.height}<br>-----------------------<br>`;
-                } 
-                else if (cmd === 'fim') {
-                    output.innerHTML += `<div>Saindo...</div>`;
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                        // Pula para o último slide na mesma aba
-                        deck.slide( deck.getHorizontalSlides().length - 1 );
-                    }, 600);
-                }
-                
-                input.value = '';
-                document.getElementById('term-body').scrollTop = document.getElementById('term-body').scrollHeight;
-            }
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transitionSpeed: 'slow'
         });
 
-        /* Particles Config */
+        /* CONFIGURAÇÃO DE PARTÍCULAS "FLUXO DE ENERGIA" */
         particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 100 },
-                "color": { "value": "#ffffff" },
-                "size": { "value": 2 },
-                "line_linked": { "enable": true, "opacity": 0.1 },
-                "move": { "enable": true, "speed": 1 }
-            }
+          "particles": {
+            "number": { "value": 130, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": ["#d8b4fe", "#818cf8", "#ffffff", "#c084fc"] },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+            "size": { "value": 2.5, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3, "sync": false } },
+            "line_linked": { "enable": true, "distance": 130, "color": "#d8b4fe", "opacity": 0.15, "width": 1 },
+            "move": { "enable": true, "speed": 1.2, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 } }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": { "onhover": { "enable": true, "mode": "bubble" }, "onclick": { "enable": true, "mode": "repulse" }, "resize": true },
+            "modes": { "bubble": { "distance": 200, "size": 6, "duration": 2, "opacity": 1, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 } }
+          },
+          "retina_detect": true
         });
     </script>
 </body>
